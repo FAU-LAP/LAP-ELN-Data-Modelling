@@ -1,0 +1,46 @@
+definitions:
+  name: "Equipment"
+  sections:
+    Equipment:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        Inventory number:
+          type: str
+          description: inventory number of the piece of equipment
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Serial number:
+          type: str
+          description: The instrument's serial number
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Version number:
+          type: str
+          description: Version number of the equipment
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Patchnotes:
+          shape: ['*']
+          type: str
+          description: Notes of the changes done
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Manufacturer:
+          type: str
+          description: The instrument's manufacturer
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Supplier:
+          type: ../upload/raw/supplier.scheme.archive.yml#Supplier
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity

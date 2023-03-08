@@ -1,0 +1,44 @@
+definitions:
+  name: "Consumable"
+  sections:
+    Consumable:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        Name:
+          type: str
+          description: Name of the supplier
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Batch number:
+          type: str
+          description: Batch number
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Amount in unit:
+          type: np.float64
+          description: Amount of the consumable
+          m_annotations:
+            eln:
+              component: NumberEditQuantity
+        Supplier:
+          type: ../upload/raw/supplier.scheme.archive.yml#Supplier
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Storage Room:
+          type: ../upload/raw/room.scheme.archive.yml#Room
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Personwhoboughtit:
+          type: Author
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: AuthorEditQuantity

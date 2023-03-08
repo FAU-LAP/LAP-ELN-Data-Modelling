@@ -1,0 +1,69 @@
+definitions:
+  name: "Experiment"
+  sections:
+    Experiment:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Timestamp:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Remark:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Type:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Description:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Protocol:
+          type: ../upload/raw/ExperimentalProtocol.scheme.archive.yml#ExperimentalProtocol
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Facility:
+          type: ../upload/raw/Facility.scheme.archive.yml#Facility
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Samples:
+          type: ../upload/raw/ExperimentalObject.scheme.archive.yml#ExperimentalObject
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        SpecialEquipment:
+          type: ../upload/raw/Equipment.scheme.archive.yml#Equipment
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Experimentator:
+          type: Author
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: AuthorEditQuantity

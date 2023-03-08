@@ -1,0 +1,60 @@
+definitions:
+  name: "Data"
+  sections:
+    Data:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Timestamp:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Type:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        FileType:
+          type: str
+          description: File Type
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Importance:
+          type: str
+          description: How valuable is this data?
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Experiment:
+          description: What experiment is this data from?
+          type: ../upload/raw/Experiment.scheme.archive.yml#Experiment
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Datafiles:
+            type: str
+            description:
+            shape: ['*']
+            m_annotations:
+              eln:
+                component: FileEditQuantity
+#        Evaluation:
+#          description: What Evaluation is this data from?
+#          type: ../upload/raw/Evaluation.scheme.archive.yml#Evaluation
+#          shape: ['*']
+#          m_annotations:
+#            eln:
+#              component: ReferenceEditQuantity

@@ -1,0 +1,40 @@
+definitions:
+  name: "Supplier"
+  sections:
+    Supplier:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        Name:
+          type: str
+          description: Name of the supplier
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Address:
+          type: str
+          description: The supplier's address
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        How to order:
+          type: str
+          description: Description of how the order should be placed
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Contact person:
+          type: str
+          description: Name of the contact person
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Address of the contact person:
+          type: str
+          description: The contact person's address
+          m_annotations:
+            eln:
+              component: StringEditQuantity

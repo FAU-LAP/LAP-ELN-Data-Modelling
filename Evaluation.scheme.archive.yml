@@ -1,0 +1,65 @@
+definitions:
+  name: "Evaluation"
+  sections:
+    Evaluation:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Timestamp:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Name:
+          type: str
+          description: Name of the evaluation
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Remark:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Type:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Description:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Data:
+          description: Data used for this evaluation
+          type: ../upload/raw/Data.scheme.archive.yml#Data
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Protocol:
+          description: Protocol used for this evaluation
+          type: ../upload/raw/EvaluationProtocol.scheme.archive.yml#EvaluationProtocol
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Personwhodidit:
+          type: Author
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: AuthorEditQuantity

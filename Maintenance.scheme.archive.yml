@@ -1,0 +1,69 @@
+definitions:
+  name: "Maintenance"
+  sections:
+    Maintenance:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      quantities:
+        Timestamp:
+          type: Datetime
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Description:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Purpose:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Performed at:
+          type: ../upload/raw/Facility.scheme.archive.yml#Facility
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Performed by:
+          type: Author
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: AuthorEditQuantity
+    Reparatur:
+      base_sections: 
+        - '#/Maintenance'
+      quantities:
+        SomeQuantity:
+          type: str
+          m_annotations:
+            eln:
+              hide: []
+    Calibration:
+      base_sections: 
+        - '#/Maintenance'
+      quantities:
+        Parameter:
+          type:
+            type_kind: Enum
+            type_data:
+              - Z-Ratio
+              - lambda-shift
+              - Intensity
+          m_annotations:
+            eln:
+              component: EnumEditQuantity
+        Result:
+          type: str
+          description: What was the Result of the Calibration?
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Experiments used:
+          type: ../upload/raw/Experiment.scheme.archive.yml#Experiment
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity

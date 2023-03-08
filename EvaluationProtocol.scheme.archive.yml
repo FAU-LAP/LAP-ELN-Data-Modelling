@@ -1,0 +1,34 @@
+definitions:
+  name: "EvaluationProtocol"
+  sections:
+    EvaluationProtocol:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: ...
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Name:
+          type: str
+          description: Name of the Evaluation
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Description:
+          type: str
+          description: Description of the Evaluation
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+        Version:
+          type: str
+          description: Version Number
+          m_annotations:
+            eln:
+              component: StringEditQuantity

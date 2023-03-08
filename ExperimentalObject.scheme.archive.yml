@@ -1,0 +1,40 @@
+definitions:
+  name: "ExperimentalObject"
+  sections:
+    ExperimentalObject:
+      base_sections:
+        - "nomad.datamodel.data.EntryData"
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: Unique ID
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Name:
+          type: str
+          description: Name given by the user
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Creation time:
+          type: Datetime
+          description: Time of creation
+          m_annotations:
+            eln:
+              component: DateTimeEditQuantity
+        Remark:
+          type: str
+          description: General Remarks
+          m_annotations:
+            eln:
+              component: RichTextEditQuantity
+#        Process of origin:
+#          type: ../upload/raw/Experiment.scheme.archive.yaml#Experiment
+#          description: Process the Object is originating from
+#          m_annotations:
+#            eln:
+#              component: RichTextEditQuantity

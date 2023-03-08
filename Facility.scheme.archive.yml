@@ -1,0 +1,70 @@
+definitions:
+  name: "Facility"
+  sections:
+    Facility:
+      base_sections:
+        - nomad.datamodel.data.EntryData
+      m_annotations:
+        eln:
+          hide: []
+      quantities:
+        ID:
+          type: str
+          description: ID of the Facility
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Name:
+          type: str
+          description: Name of the Facility
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Version number:
+          type: str
+          description: Versionnumber of the facility
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Patchnotes:
+          shape: ['*']
+          type: str
+          description: Notes of the changes done
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Description:
+          type: str
+          description: Description of the facility
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Betriebsanweisungen:
+          type: str
+          description: Betriebsanweisungen of the facility
+          m_annotations:
+            eln:
+              component: StringEditQuantity
+        Used Consumables:
+          type: ../upload/raw/consumables.scheme.archive.yml#Consumable
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Personwhoisresponsible:
+          type: Author
+          shape: ['*']
+          m_annotations:
+            eln:
+              component: AuthorEditQuantity
+        Room:
+          type: ../upload/raw/room.scheme.archive.yml#Room
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+        Used Equipment:
+          type: ../upload/raw/Equipment.scheme.archive.yml#Equipment
+          m_annotations:
+            eln:
+              component: ReferenceEditQuantity
+          
